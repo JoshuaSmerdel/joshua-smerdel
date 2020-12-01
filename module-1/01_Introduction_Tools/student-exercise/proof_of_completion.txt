@@ -1,0 +1,202 @@
+✔ ~/workspace/joshua-smerdel/module-1/01_introduction_tools/student-exercise [master ↑·2|…1]
+20:08 $ cd ~
+
+Student@Dell-V3-Multi MINGW64 ~
+$ makedir playground
+bash: makedir: command not found
+
+Student@Dell-V3-Multi MINGW64 ~
+$ makedir ~/playground
+bash: makedir: command not found
+
+Student@Dell-V3-Multi MINGW64 ~
+$ mkdir playground
+
+Student@Dell-V3-Multi MINGW64 ~
+$ mkdir ~/playground/canada
+
+Student@Dell-V3-Multi MINGW64 ~
+$ mkdir ~/playground/usa
+
+Student@Dell-V3-Multi MINGW64 ~
+$ mkdir ~/playground/usa/ohio
+
+Student@Dell-V3-Multi MINGW64 ~
+$ mkdir ~/playground/usa/pennsylvania
+
+Student@Dell-V3-Multi MINGW64 ~
+$ mkdir ~/playground/usa/michigan
+
+Student@Dell-V3-Multi MINGW64 ~
+$ mkdir ~/playground/usa/ohio/cuyahoga
+
+Student@Dell-V3-Multi MINGW64 ~
+$ mkdir ~/playground/usa/ohio/hamilton
+
+Student@Dell-V3-Multi MINGW64 ~
+$ mkdir ~/playground/usa/ohio/franklin
+
+Student@Dell-V3-Multi MINGW64 ~
+$ mkdir ~/playground/usa/pennsylvania/allegheny
+
+Student@Dell-V3-Multi MINGW64 ~
+$ mkdir ~/playground/usa/michigan/wayne
+
+Student@Dell-V3-Multi MINGW64 ~
+$ mkdir ~/playground/canada/quebec
+
+Student@Dell-V3-Multi MINGW64 ~
+$ mkdir ~/playground/canada/british columbia
+
+Student@Dell-V3-Multi MINGW64 ~
+$ cd ~/playground/usa/ohio/cuyahoga
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio/cuyahoga
+$ touch cleveland.txt
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio/cuyahoga
+$ cincinnati.txt
+bash: cincinnati.txt: command not found
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio/cuyahoga
+$ touch cincinnati.txt
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio/cuyahoga
+$ mv cincinnati.txt ~/playground/usa/ohio/franklin
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio/cuyahoga
+$ ls
+cleveland.txt
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio/cuyahoga
+$ ..
+bash: ..: command not found
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio/cuyahoga
+$ ..
+bash: ..: command not found
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio/cuyahoga
+$ cd ..
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio
+$ ls
+cuyahoga/  franklin/  hamilton/
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio
+$ cd hamilton
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio/hamilton
+$ mv <cincinnati.txt> <~/playground/usa/ohio/franklin>
+bash: syntax error near unexpected token `<'
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio/hamilton
+$ ^C
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio/hamilton
+$ mv cincinnati.txt ~/playground/usa/ohio/franklin
+mv: cannot stat 'cincinnati.txt': No such file or directory
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio/hamilton
+$ cd ..
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio
+$ cd franklin
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio/franklin
+$ mv cincinnati.txt columbus.txt
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio/franklin
+$ cd ~/playground/usa/pennsylvania/allegheny
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/pennsylvania/allegheny
+$ touch pittsburgh.txt
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/pennsylvania/allegheny
+$ cd ~/playground/usa/michigan/wayne
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/michigan/wayne
+$ touch detroit.txt
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/michigan/wayne
+$ cd ~/playground/canada/quebec
+
+Student@Dell-V3-Multi MINGW64 ~/playground/canada/quebec
+$ touch montreal.txt
+
+Student@Dell-V3-Multi MINGW64 ~/playground/canada/quebec
+$ touch quebec-city.txt
+
+Student@Dell-V3-Multi MINGW64 ~/playground/canada/quebec
+$ cd ..
+
+Student@Dell-V3-Multi MINGW64 ~/playground/canada
+$ la
+total 0
+drwxr-xr-x 1 Student 197121 0 Nov 30 20:55 ./
+drwxr-xr-x 1 Student 197121 0 Nov 30 20:52 ../
+drwxr-xr-x 1 Student 197121 0 Nov 30 20:55 british/
+drwxr-xr-x 1 Student 197121 0 Nov 30 21:11 quebec/
+
+Student@Dell-V3-Multi MINGW64 ~/playground/canada
+$ cd british columbia
+bash: cd: too many arguments
+
+Student@Dell-V3-Multi MINGW64 ~/playground/canada
+$ mv british "bristish columbia"
+
+Student@Dell-V3-Multi MINGW64 ~/playground/canada
+$ mv "bristish columbia" "british columbia"
+
+Student@Dell-V3-Multi MINGW64 ~/playground/canada
+$ rm -f columbia
+
+Student@Dell-V3-Multi MINGW64 ~/playground/canada
+$ cd "british columbia"
+
+Student@Dell-V3-Multi MINGW64 ~/playground/canada/british columbia
+$ touch vancouver.txt
+
+Student@Dell-V3-Multi MINGW64 ~/playground/canada/british columbia
+$ touch prince-george.txt
+
+Student@Dell-V3-Multi MINGW64 ~/playground/canada/british columbia
+$ cd ..
+
+Student@Dell-V3-Multi MINGW64 ~/playground/canada
+$ cd ..
+
+Student@Dell-V3-Multi MINGW64 ~/playground
+$ usa/ohio
+bash: usa/ohio: Is a directory
+
+Student@Dell-V3-Multi MINGW64 ~/playground
+$ cd usa/ohio
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio
+$ cp cleveland.txt ~/playground/usa/ohio/hamilton
+cp: cannot stat 'cleveland.txt': No such file or directory
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio
+$ ^C
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio
+$ cd ~/playground/usa/ohio
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio
+$ cd cuyahoga
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio/cuyahoga
+$ cp cleveland.txt ~/playground/usa/ohio/hamilton
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio/cuyahoga
+$ cd  ~/playground/usa/ohio/cuyahoga/hamilton
+bash: cd: /c/Users/Student/playground/usa/ohio/cuyahoga/hamilton: No such file or directory
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio/cuyahoga
+$ cd ~/playground/usa/ohio/hamilton
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio/hamilton
+$ mv cleveland.txt cincinnati.txt
+
+Student@Dell-V3-Multi MINGW64 ~/playground/usa/ohio/hamilton
