@@ -16,11 +16,11 @@ public class Exercises {
 			return true;
 		}
 		if(isWeekday)
-		return false;
-		
+		{
+			return false;
+		}
 		return true;
 	}
-
 	/*
 	 2. We have two monkeys, a and b, and the parameters aSmile and bSmile indicate if each is smiling.
 	 We are in trouble if they are both smiling or if neither of them is smiling. Return true if we
@@ -68,8 +68,16 @@ public class Exercises {
 	 diff21(22) → 2
 	 diff21(-10) → 31
 	 */
-	public int diff21(int n) {
-		return 0;
+	public void diff21(int n)
+	{
+		if (n < 22)
+		{
+			return 21 - n;
+		}
+		else if (n > 21)
+		{
+			return (n - 21) * 2;
+		}
 	}
 
 	/*
