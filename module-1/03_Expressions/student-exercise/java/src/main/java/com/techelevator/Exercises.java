@@ -9,15 +9,17 @@ public class Exercises {
 	 sleepIn(true, false) → false
 	 sleepIn(false, true) → true
 	 */
-//	public boolean sleepIn(boolean isWeekday, boolean onVacation)
-//	{
-//		if(onVacation)
-//		{
-//			return true;
-//		}
-//		if(isWeekday)
-//		return false;
-//	}
+	public boolean sleepIn(boolean isWeekday, boolean onVacation)
+	{
+		if(onVacation)
+		{
+			return true;
+		}
+		if(isWeekday)
+		return false;
+		
+		return true;
+	}
 
 	/*
 	 2. We have two monkeys, a and b, and the parameters aSmile and bSmile indicate if each is smiling.
@@ -45,17 +47,17 @@ public class Exercises {
 	 sumDouble(2, 2) → 8
 	 */
 	public int sumDouble(int a, int b) {
-		if (a = b)
+		if (a == b)
 		{
 		return (a + b) * 2;
 		}
 		
 				{
-			return true
+			return a + b;
 				}
 		
 	}
-	}
+	
 
 	/*
 	 4. Given an int n, return the absolute difference between n and 21, except return double the absolute
@@ -92,6 +94,18 @@ public class Exercises {
 		return false;
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	/*
 	 7. Given 2 int values, return true if one is negative and one is positive. Except if the parameter
 	 "negative" is true, then return true only if both are negative.
@@ -120,7 +134,16 @@ public class Exercises {
 	 icyHot(-1, 120) → true
 	 icyHot(2, 120) → false
 	 */
-	public boolean icyHot(int temp1, int temp2) {
+	public boolean icyHot(int temp1, int temp2)
+	{
+		if (temp1 <0 && temp2 >100)
+		{
+			return true
+		}
+		if (temp1 >100 && temp <0)
+		{
+			return true
+		}
 		return false;
 	}
 
@@ -174,7 +197,22 @@ public class Exercises {
 	 in3050(40, 50) → true
 	 */
 	public boolean in3050(int a, int b) {
-		return false;
+		
+		boolean isA3040 = a >= 30 && a <= 40;
+		boolean isB3040 = b >= 30 && b <= 40;
+		boolean isA4050 = a >= 40 && a <= 50;
+		boolean isB4050 = b >= 40 && b <= 50;
+		
+		if (isA4050 && isB4050)
+			{
+			return true;
+			}
+		if (isA3040 && isB3040)
+			{
+			return true;
+			}
+			return false;
+		
 	}
 
 	/*
@@ -185,6 +223,21 @@ public class Exercises {
 	 max1020(11, 9) → 11
 	 */
 	public int max1020(int a, int b) {
+		boolean isAInRange = a >= 10 && a <= 20;
+		boolean isBInRange = b >= 10 && b <= 20;
+		if (isAInRange && isBInRange)
+		{
+			return a;
+		}
+		else return b;
+		{
+		else if (isAInRange)
+			return a;
+		}
+		else if (isBInRange) 
+		{
+			return b;
+		}
 		return 0;
 	}
 
@@ -198,7 +251,14 @@ public class Exercises {
 	 cigarParty(70, true) → true
 	 */
 	public boolean cigarParty(int cigars, boolean isWeekend) {
-		return false;
+		
+		if (isWeekend)
+		{
+			return cigars >=40;
+		}
+		return cigars >= 40 && cigars <=60;
+		
+	
 	}
 
 	/*
@@ -213,6 +273,12 @@ public class Exercises {
 	 dateFashion(5, 5) → 1
 	 */
 	public int dateFashion(int you, int date) {
+		if (you <= 2 || date <=2)
+		{
+			return 0;
+		}
+		if (you >= 8 || date >= 8)
+			return 2;
 		return 0;
 	}
 
@@ -247,11 +313,31 @@ public class Exercises {
      yourCakeAndEatItToo(10.00, false) → "standard"
      yourCakeAndEatItToo(10.00, true) → "special"
      yourCakeAndEatItToo(11.00, false) → "special"
+     
+     is it your birthday?
+     
+     
      */
-    public String yourCakeAndEatItToo(double mealAmount, boolean isBirthday) {
-        return "";
+    public String yourCakeAndEatItToo(double mealAmount, boolean isBirthday) 
+    {
+        
+        if (isBirthday)
+        {
+        	mealAmount += 5;
+        }
+        
+        if (mealAmount <= 10)
+        {
+        	return "standard";
+        }
+        else if (mealAmount <= 15)
+        {
+        	return "special";
+        }
+        
+        return "ginormous";
+        		
     }
-
 	/*
 	 20. Given 2 ints, a and b, return their sum. However, sums in the range 10..19 inclusive, are forbidden,
 	 so in that case just return 20.
@@ -271,9 +357,28 @@ public class Exercises {
 	 alarmClock(1, false) → "7:00"
 	 alarmClock(5, false) → "7:00"
 	 alarmClock(0, false) → "10:00"
+	
+	are we on vacation
+	
+	 
 	 */
 	public String alarmClock(int day, boolean vacation) {
-		return "";
+		
+		boolean isWeekday = day >=1 && day <=5;
+		
+		if (vacation)
+		{
+			if (isWeekday)
+				return "10:00";
+			else
+				return "off";
+		}
+		else 
+		{
+			if (isWeekday)
+				return "7:00";
+		}
+	
 	}
 
 	/*
