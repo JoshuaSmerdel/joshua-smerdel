@@ -7,9 +7,19 @@ public class Exercises {
 	 The array will be length 1 or more.
 	 firstLast6([1, 2, 6]) → true
 	 firstLast6([6, 1, 2, 3]) → true
-	 firstLast6([13, 6, 1, 2, 3]) → false
+	 firstLast6([13, 6, 1, 2, 3]) → false  THIS IS THE NEW FILE
 	 */
-	public boolean firstLast6(int[] nums) {
+	public boolean firstLast6(int[] nums)
+	{
+		if (nums[0] ==6)
+		{
+			return true;
+		}
+		if (nums[nums.length -1] == 6) 
+		{
+			return true;
+		}
+		
 		return false;
 	}
 
@@ -20,8 +30,18 @@ public class Exercises {
 	 sameFirstLast([1, 2, 3, 1]) → true
 	 sameFirstLast([1, 2, 1]) → true
 	 */
-	public boolean sameFirstLast(int[] nums) {
+	public boolean sameFirstLast(int[] nums) 
+	{
+		if (nums.length > 0)
+		{
+			if (nums[0] == nums[nums.length -1]) 
+			{
+				return true;
+			}
+		}
+		
 		return false;
+		
 	}
 
 	/*
@@ -60,8 +80,14 @@ public class Exercises {
 	 rotateLeft3([5, 11, 9]) → [11, 9, 5]
 	 rotateLeft3([7, 0, 0]) → [0, 0, 7]
 	 */
-	public int[] rotateLeft3(int[] nums) {
-		return new int[] {};
+	public int[] rotateLeft3(int[] nums)
+	{
+		int[]newNums = new int[3];
+		newNums[0] = nums[1];
+		newNums[1] = nums[2];
+		newNums[2] = nums[0];
+		
+		return newNums;
 	}
 
 	/*
@@ -71,8 +97,14 @@ public class Exercises {
 	 reverse3([5, 11, 9]) → [9, 11, 5]
 	 reverse3([7, 0, 0]) → [0, 0, 7]
 	 */
-	public int[] reverse3(int[] nums) {
-		return new int[] {};
+	public int[] reverse3(int[] nums)
+	{
+		int[]newNums = new int[3];
+		newNums[0] = nums[2];
+		newNums[1] = nums[1];
+		newNums[2] = nums[0];
+		
+		return newNums;
 	}
 
 	/*
@@ -82,8 +114,23 @@ public class Exercises {
 	 maxEnd3([11, 5, 9]) → [11, 11, 11]
 	 maxEnd3([2, 11, 3]) → [3, 3, 3]
 	 */
-	public int[] maxEnd3(int[] nums) {
-		return new int[] {};
+	public int[] maxEnd3(int[] nums)
+	{
+		int [] newArray = new int [3];
+		if (nums[0] > nums[2])
+		{
+			newArray [0] = nums[0];
+			newArray [1] = nums[0];
+			newArray [2] = nums[0];
+		}
+		else 
+		{
+			newArray [0] = nums[2];
+			newArray [1] = nums[2];
+			newArray [2] = nums[2];
+		}
+		
+		return newArray;
 	}
 
 	/*
