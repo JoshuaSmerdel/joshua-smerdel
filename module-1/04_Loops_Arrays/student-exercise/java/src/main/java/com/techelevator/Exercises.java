@@ -191,18 +191,22 @@ public class Exercises {
 	 countEvens([1, 3, 5]) → 0
 	 
 	need to create a for loop testing each index against % until no more to test. 
-	then compile and return those numbers testing even.  
+	then compile and return amount of those numbers testing even.  
 	 
 	 */
 	public int countEvens(int[] nums)
 	{
-		for (int nums[])
+		int numsEvenResults = 0;
 		
-		
-		
-		
-		
-		return 0;
+		for (int i = 0; i <= nums.length-1; i++)
+		{
+			if (nums[i] % 2 == 0)
+			{
+				numsEvenResults ++;
+			}
+					
+		}
+			return numsEvenResults;
 	}
 
 	/*
