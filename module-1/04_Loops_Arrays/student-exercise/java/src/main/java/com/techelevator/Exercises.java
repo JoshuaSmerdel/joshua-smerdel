@@ -41,15 +41,20 @@ public class Exercises {
 		}
 		
 		return false;
-		
 	}
 
 	/*
 	 3. Return an int array length 3 containing the first 3 digits of pi, {3, 1, 4}.
 	 makePi() → [3, 1, 4]
 	 */
-	public int[] makePi() {
-		return new int[] {};
+	public int[] makePi()
+	{
+		int[] piArray = new int[3];
+		piArray[0] = 3;
+		piArray[1] = 1;
+		piArray[2] = 4;
+		
+		return piArray;
 	}
 
 	/*
@@ -59,7 +64,13 @@ public class Exercises {
 	 commonEnd([1, 2, 3], [7, 3, 2]) → false
 	 commonEnd([1, 2, 3], [1, 3]) → true
 	 */
-	public boolean commonEnd(int[] a, int[] b) {
+	public boolean commonEnd(int[] a, int[] b)
+	{
+		if (a[0] == b[0] || a[a.length -1] == b[b.length -1])
+		{
+			return true;
+		}
+	
 		return false;
 	}
 
@@ -69,8 +80,10 @@ public class Exercises {
 	 sum3([5, 11, 2]) → 18
 	 sum3([7, 0, 0]) → 7
 	 */
-	public int sum3(int[] nums) {
-		return 0;
+	public int sum3(int[] nums)
+	{
+		
+		return (nums[0]+nums[1]+nums[2]);
 	}
 
 	/*
@@ -140,7 +153,17 @@ public class Exercises {
 	 sum2([1, 1]) → 2
 	 sum2([1, 1, 1, 1]) → 2
 	 */
-	public int sum2(int[] nums) {
+	public int sum2(int[] nums)
+	{
+		if (nums.length >= 2)
+		{
+			return (nums[0] + nums[1]);
+		}
+		if (nums.length == 1)
+		{
+			return (nums[0]);
+		}
+		
 		return 0;
 	}
 
@@ -151,8 +174,13 @@ public class Exercises {
 	 middleWay([7, 7, 7], [3, 8, 0]) → [7, 8]
 	 middleWay([5, 2, 9], [1, 4, 5]) → [2, 4]
 	 */
-	public int[] middleWay(int[] a, int[] b) {
-		return new int[] {};
+	public int[] middleWay(int[] a, int[] b)
+	{
+		int[] middleWayArray = new int[2];
+		middleWayArray[0] = a[1];
+		middleWayArray[1] = b[1];
+
+		return middleWayArray;
 	}
 
 	/*
@@ -161,8 +189,19 @@ public class Exercises {
 	 countEvens([2, 1, 2, 3, 4]) → 3
 	 countEvens([2, 2, 0]) → 3
 	 countEvens([1, 3, 5]) → 0
+	 
+	need to create a for loop testing each index against % until no more to test. 
+	then compile and return those numbers testing even.  
+	 
 	 */
-	public int countEvens(int[] nums) {
+	public int countEvens(int[] nums)
+	{
+		for (int nums[])
+		
+		
+		
+		
+		
 		return 0;
 	}
 
@@ -176,7 +215,9 @@ public class Exercises {
 	 sum13([1, 2, 2, 1, 13, 3]) → 6
 	 sum13([1, 2, 2, 1, 13, 3, 4]) → 10
 	 */
-	public int sum13(int[] nums) {
+	public int sum13(int[] nums)
+	
+	{
 		return 0;
 	}
 
