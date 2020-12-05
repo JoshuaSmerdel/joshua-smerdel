@@ -129,23 +129,19 @@ public class Exercises {
 	 */
 	public int[] maxEnd3(int[] nums)
 	{
-		int [] newArray = new int [3];
+		
 		if (nums[0] > nums[2])
 		{
-			newArray [0] = nums[0];
-			newArray [1] = nums[0];
-			newArray [2] = nums[0];
+			nums[1] = nums[0];
+			nums[2] = nums[0];
 		}
-		else 
+		else
 		{
-			newArray [0] = nums[2];
-			newArray [1] = nums[2];
-			newArray [2] = nums[2];
+			nums[0] = nums[2];
+			nums[1] = nums[2];
 		}
-		
-		return newArray;
+		return nums;
 	}
-
 	/*
 	 9. Given an array of ints, return the sum of the first 2 elements in the array. If the array length
 	  is less than 2, just sum up the elements that exist, returning 0 if the array is length 0.
@@ -196,9 +192,9 @@ public class Exercises {
 	 */
 	public int countEvens(int[] nums)
 	{
-		int numsEvenResults = 0;
 		
-		for (int i = 0; i <= nums.length-1; i++)
+		int numsEvenResults = 0;
+		for (int i = 0; i < nums.length; i++)
 		{
 			if (nums[i] % 2 == 0)
 			{
@@ -210,9 +206,16 @@ public class Exercises {
 	}
 
 	/*
-	 12. Return the sum of the numbers in the array, returning 0 for an empty array. Except the number 
-	 13 is very unlucky, so it does not count and numbers that come immediately after a 13 also do 
+	 12. Return the sum of the numbers in the array, returning 0 for an empty array.
+	 Except the number 
+	 13 is very unlucky, so it does not count and numbers that come immediately
+	 after a 13 also do 
 	 not count.
+	 
+	 
+	 +=
+	 sumOfArrays = sumOfArrays + nums[i]
+	 
 	 sum13([1, 2, 2, 1]) → 6
 	 sum13([1, 1]) → 2
 	 sum13([1, 2, 2, 1, 13]) → 6
@@ -220,11 +223,36 @@ public class Exercises {
 	 sum13([1, 2, 2, 1, 13, 3, 4]) → 10
 	 */
 	public int sum13(int[] nums)
-	
 	{
-		return 0;
+		int sumOfArray1 = 0;
+		
+		for (int i = 0; i <nums.length; i++)
+		{
+			if (nums[i] != 13)
+			{
+				sumOfArray1 += nums[i];
+			}
+			else 
+			{
+				i++;
+			}
+		}
+		
+		return sumOfArray1;
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	/*
 	 13. Given an array of ints, return true if the array contains a 2 next to a 2 somewhere.
 	 has22([1, 2, 2]) → true

@@ -399,13 +399,30 @@ public class Exercises {
 	}
 
 	/*
-	 22. Given a number n, return true if n is in the range 1..10, inclusive. Unless "outsideMode" is true,
-	 in which case return true if the number is less or equal to 1, or greater or equal to 10.
+	 22. Given a number n, return true if n is in the range 1..10, inclusive.
+	 Unless "outsideMode" is true,
+	 in which case return true if the number is less or equal to 1,
+	 or greater or equal to 10.
+	 
+	 
 	 in1To10(5, false) → true
 	 in1To10(11, false) → false
 	 in1To10(11, true) → true
 	 */
-	public boolean in1To10(int n, boolean outsideMode) {
+	public boolean in1To10(int n, boolean outsideMode)
+	{
+		if (outsideMode)
+			
+			if ( n <= 1 || n >=10)
+			{
+				return true;
+			}
+			else return false;
+		
+		if (n >=1 && n <=10)
+		{
+			return true;
+		}
 		return false;
 	}
 
@@ -535,13 +552,24 @@ public class Exercises {
 	}
 
 	/*
-	 34. Given 3 int values, a b c, return their sum. However, if one of the values is the same as another
+	 34. Given 3 int values, a b c, return their sum.
+	 However, if one of the values is the same as another
 	 of the values, it does not count towards the sum.
 	 loneSum(1, 2, 3) → 6
 	 loneSum(3, 2, 3) → 2
 	 loneSum(3, 3, 3) → 0
 	 */
-	public int loneSum(int a, int b, int c) {
+	public int loneSum(int a, int b, int c)
+	{
+		if ((a != b) && (b != c) && (a != c)) 
+		{
+			return (a+b+c);
+		}
+		else if (a == b) 
+		{
+			return c;
+		}
+		else if (//not finished. )
 		return 0;
 	}
 
