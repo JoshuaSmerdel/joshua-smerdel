@@ -7,7 +7,7 @@ public class Exercises {
 	 The array will be length 1 or more.
 	 firstLast6([1, 2, 6]) → true
 	 firstLast6([6, 1, 2, 3]) → true
-	 firstLast6([13, 6, 1, 2, 3]) → false  THIS IS THE NEW FILE
+	 firstLast6([13, 6, 1, 2, 3]) → false
 	 */
 	public boolean firstLast6(int[] nums)
 	{
@@ -240,26 +240,26 @@ public class Exercises {
 		
 		return sumOfArray1;
 	}
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	/*
 	 13. Given an array of ints, return true if the array contains a 2 next to a 2 somewhere.
 	 has22([1, 2, 2]) → true
 	 has22([1, 2, 1, 2]) → false
 	 has22([2, 1, 2]) → false
 	 */
-	public boolean has22(int[] nums) {
+	
+	//CURRENTLY NOT WORKING.  NOT SURE WHY. 
+	
+	public boolean has22(int[] nums)
+	{
+		for (int i = 0; i < nums.length; i++)
+		{
+			boolean hasMoreNumbers = nums.length > i+1;
+			if (nums[i] == 2 && hasMoreNumbers && nums[i+1] == 2)
+			{
+				return true;
+			}
+		}
+		
 		return false;
 	}
 	
@@ -269,8 +269,18 @@ public class Exercises {
 	 lucky13([1, 2, 3]) → false
 	 lucky13([1, 2, 4]) → false
 	 */
-	public boolean lucky13(int[] nums) {
-		return false;
+	public boolean lucky13(int[] nums)
+	{
+		for (int i= 0; i < nums.length; i++)
+		{
+			if ((nums[i] == 3) || (nums[i] == 1))
+			{
+				return false;
+			}
+		}
+		
+		return true;
+	
 	}
 
 	/*
@@ -279,8 +289,24 @@ public class Exercises {
 	 sum28([2, 3, 2, 2, 4, 2, 2]) → false
 	 sum28([1, 2, 3, 4]) → false
 	 */
-	public boolean sum28(int[] nums) {
-		return false;
+	public boolean sum28(int[] nums)
+	{
+		int sumOf8 = 0;
+		
+		for (int i = 0; i < nums.length; i++)
+		{
+			if (nums[i] ==2) 
+			{
+				sumOf8 = sumOf8 + 2;
+			}
+			
+		}	
+		if (sumOf8 == 8) 
+		{
+			return true;
+		}
+		
+	return false;
 	}
 
 }
