@@ -373,13 +373,22 @@ public class Exercises {
 	}
 
 	/*
-	 Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
+	 Given a string, return a new string made of every other char starting with the first, 
+	 so "Hello" yields "Hlo".
 	 stringBits("Hello") → "Hlo"
 	 stringBits("Hi") → "H"
 	 stringBits("Heeololeo") → "Hello"
 	 */
-	public String stringBits(String str) {
-		return null;
+	public String stringBits(String str)
+	{
+		String everyOther = "";
+		
+		for (int i = 0; i < str.length(); i = i+2)
+		{
+			everyOther = everyOther + str.charAt(i);
+		}
+		
+		return everyOther;
 	}
 
 	/*
@@ -388,8 +397,16 @@ public class Exercises {
 	 stringSplosion("abc") → "aababc"
 	 stringSplosion("ab") → "aab"
 	 */
-	public String stringSplosion(String str) {
-		return null;
+	public String stringSplosion(String str)
+	{
+		String stutterString = "";
+		
+		for(int i = 0; i < str.length() + 1; i = i + 1)
+		{
+			stutterString = stutterString + str.substring(0, i);
+		}
+		
+		return stutterString;
 	}
 
 	/*
@@ -399,8 +416,26 @@ public class Exercises {
 	 last2("xaxxaxaxx") → 1
 	 last2("axxxaaxx") → 2
 	 */
-	public int last2(String str) {
-		return 0;
+	public int last2(String str)
+	{
+		if (str.length() < 2) 
+		{
+			return 0;
+		}
+		
+		String cStr = str.substring(str.length() - 2, str.length());
+		int counter = 0;
+		
+		
+		for (int i = 0; i < str.length() - 2; i = i + 1)
+		{
+			if (str.substring(i, i + 2).equals(cStr))
+			{
+				counter = counter + 1;
+			}
+		}
+
+		return counter;
 	}
 
 	/*
@@ -410,8 +445,19 @@ public class Exercises {
 	 stringX("abxxxcd") → "abcd"
 	 stringX("xabxxxcdx") → "xabcdx"
 	 */
-	public String stringX(String str) {
-		return null;
+	public String stringX(String str)
+	{
+		String x = "";
+		
+		for (int i = 0; i < str.length(); i = i + 1) 
+		{
+			if (!(i > 0 && i<str.length() -1 && str.charAt(i) == 'x'))
+				{
+					x += str.charAt(i);
+				}
+		}
+		
+		return x;
 	}
 
 	/*
@@ -420,8 +466,25 @@ public class Exercises {
 	 altPairs("Chocolate") → "Chole"
 	 altPairs("CodingHorror") → "Congrr"
 	 */
-	public String altPairs(String str) {
-		return null;
+	public String altPairs(String str)
+	{
+		String plus4Str = "";
+		
+		for (int i = 0; i < str.length(); i += 4)
+		{
+			if (i >= str.length())
+			{
+				break;
+			}
+			plus4Str += str.substring(i, i+1);
+			
+			if (i + 1 >= str.length()) 
+			{
+				break;
+			}
+			plus4Str += str.substring(i+1, i+2);
+		}
+		return plus4Str;
 	}
 
 	/*
