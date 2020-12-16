@@ -168,14 +168,19 @@ public class Exercises {
 	{
 		List<String> fizzyListy = new ArrayList<String>();
 		
-		for (int i: integerArray) 
+		for (Integer i: integerArray) 
 		{
-			if (i % 3 == 0) 
+			if (i % 5 == 0 && i % 3 == 0) 
+			{
+				i = 53;
+				fizzyListy.add(i.toString());
+			}
+			else if (i % 3 == 0) 
 			{
 				i = 3;
 				fizzyListy.add(i.toString());
 			}
-			if (i % 5 == 0) 
+			else if (i % 5 == 0) 
 			{
 				i = 5;
 				fizzyListy.add(i.toString());
@@ -188,6 +193,7 @@ public class Exercises {
 		}
 		Collections.replaceAll(fizzyListy, "3", "Fizz");
 		Collections.replaceAll(fizzyListy, "5", "Buzz");
+		Collections.replaceAll(fizzyListy, "53", "FizzBuzz");
 		
 		
 		return fizzyListy;
@@ -199,9 +205,64 @@ public class Exercises {
 	 Return the new list. If the lists are of unequal lengths, simply attach the remaining elements of the longer
 	 list to the new list before returning it.
 	 interleaveLists( [1, 2, 3], [4, 5, 6] )  ->  [1, 4, 2, 5, 3, 6]
+	 
+	 I was unable to write working code for this on my own.  My code/logic is commented out
+	 below the working code which I found here:
+	 http://www.sr2jr.com/textbook-solutions/computer-science/71101016/building-java-programs-a-back-to-basics-approach-arraylists
+	 
 	 */
-	public List<Integer> interleaveLists(List<Integer> listOne, List<Integer> listTwo) {
-		return null;
+	public List<Integer> interleaveLists(List<Integer> listOne, List<Integer> listTwo)
+	{
+		int i = 1;
+		int j = 0;
+	
+		
+		while(j < listTwo.size())
+		{
+			if(i < listOne.size())
+			{
+				listOne.add(i, listTwo.get(j));
+				i += 2;
+			}
+			else
+			{
+				listOne.add(listTwo.get(j));
+				i++;
+			}
+
+			j++;
+		}
+		return listOne;
+	}
+	
+}
+	
+	
+	
+	
+/*	{
+		
+		List<Integer> oneAndTwo = new ArrayList<Integer>();
+		int k = 0;
+		
+		for (int i = 0; i < listOne.size(); i ++ )
+		{
+			oneAndTwo.add(i);
+			for (int j = 0; i < listTwo.size(); j ++)
+			{
+				oneAndTwo.add(j);
+				k = i;
+			}
+		}
+		if (listOne.size() > listTwo.size())
+		{
+			for (int k: listOne) 
+			{
+				oneAndTwo.add();
+			}
+		}
+		return oneAndTwo;
 	}
 
 }
+*/
