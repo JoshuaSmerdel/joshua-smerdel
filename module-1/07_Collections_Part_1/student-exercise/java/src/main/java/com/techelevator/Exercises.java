@@ -1,6 +1,7 @@
 package com.techelevator;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Exercises {
@@ -15,8 +16,16 @@ public class Exercises {
 	 array2List( {"Red", "Orange", "Yellow"} )  ->  ["Red", "Orange", "Yellow"]
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"]
 	 */
-	public List<String> array2List(String[] stringArray) {
-		return null;
+	public List<String> array2List(String[] stringArray)
+	{
+		List<String> fruitList = new ArrayList<String>();
+		
+		for (int i = 0; i < stringArray.length; i++) 
+		{
+			fruitList.add(stringArray[i]);
+		}
+			return fruitList;
+		
 	}
 
 	/*
@@ -25,8 +34,16 @@ public class Exercises {
 	 list2Array( ["Red", "Orange", "Yellow"] )  ->  {"Red", "Orange", "Yellow"}
 	 list2Array( ["Left", "Right", "Forward", "Back"] )  ->  {"Left", "Right", "Forward", "Back"}
 	 */
-	public String[] list2Array(List<String> stringList) {
-		return null;
+	public String[] list2Array(List<String> stringList)
+	{
+		String[] fruitList2 = new String[stringList.size()];
+		
+		for (int i = 0; i < stringList.size(); i ++)
+		{
+			fruitList2[i]= stringList.get(i);
+		}
+		
+		return fruitList2;
 	}
 
 	/*
@@ -36,8 +53,18 @@ public class Exercises {
 	 no4LetterWords( {"Red", "White", "Blue"} )  ->  ["Red", "White"]
 	 no4LetterWords( {"Jack", "Jill", "Jane", "John", "Jim"} )  ->  ["Jim"]
 	 */
-	public List<String> no4LetterWords(String[] stringArray) {
-		return null;
+	public List<String> no4LetterWords(String[] stringArray)
+	{
+		List<String> moreThan4 = new ArrayList<String>();
+		
+		for (String i: stringArray)
+		{
+			if (i.length() != 4) 
+			{
+				moreThan4.add(i);
+			}
+		}
+		return moreThan4;
 	}
 
 	/*
@@ -46,8 +73,16 @@ public class Exercises {
 	 arrayInt2ListDouble( {745, 23, 44, 9017, 6} ) -> [372.5, 11.5, 22, 4508.5, 3]
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
-	public List<Double> arrayInt2ListDouble(int[] intArray) {
-		return null;
+	public List<Double> arrayInt2ListDouble(int[] intArray)
+	{
+		List<Double> dividedByTwo = new ArrayList<Double>();
+		
+		for (int i: intArray) 
+		{
+			dividedByTwo.add(i * 0.5);
+		}
+		
+		return dividedByTwo;
 	}
 
 	/*
@@ -56,8 +91,16 @@ public class Exercises {
 	 findLargest( [987, 1234, 9381, 731, 43718, 8932] ) -> 43718
 	 findLargest( [34070, 1380, 81238, 7782, 234, 64362, 627] ) -> 64362
 	 */
-	public Integer findLargest(List<Integer> integerList) {
-		return null;
+	
+	// found how to pull last index here:  https://stackoverflow.com/questions/687833/how-to-get-the-last-value-of-an-arraylist
+	// found how to sort list here: https://beginnersbook.com/2013/12/how-to-sort-arraylist-in-java/
+	
+	public Integer findLargest(List<Integer> integerList)
+	{	
+		Collections.sort(integerList);
+		Integer largestValue = integerList.get(integerList.size()-1);
+		
+		return largestValue;
 	}
 
 	/*
@@ -66,8 +109,19 @@ public class Exercises {
 	 oddOnly( {1143, 555, 7, 1772, 9953, 643} ) -> [1143, 555, 7, 9953, 643]
 	 oddOnly( {734, 233, 782, 811, 3, 9999} ) -> [233, 811, 3, 9999]
 	 */
-	public List<Integer> oddOnly(Integer[] integerArray) {
-		return null;
+	public List<Integer> oddOnly(Integer[] integerArray)
+	{
+		List<Integer> theOddCouple = new ArrayList<Integer>();
+		
+		for (int i: integerArray) 
+		{
+			if (i % 2 != 0) 
+			{
+				theOddCouple.add(i);
+			}
+		}
+		
+		return theOddCouple;
 	}
 
 	/*
@@ -77,7 +131,23 @@ public class Exercises {
 	 foundIntTwice( [6, 8, 10, 11, 13], 8 -> false
 	 foundIntTwice( [9, 23, 44, 2, 88, 44], 44) -> true
 	 */
-	public boolean foundIntTwice(List<Integer> integerList, int intToFind) {
+	public boolean foundIntTwice(List<Integer> integerList, int intToFind)
+	{
+		int twoTimesACharm = 0;
+		
+		for (int i: integerList) 
+		{
+			if (i == intToFind) 
+			{
+				twoTimesACharm = twoTimesACharm + 1;
+			}
+		}
+		if (twoTimesACharm >= 2) 
+		{
+			return true;
+		}
+		else
+		
 		return false;
 	}
 
@@ -94,8 +164,33 @@ public class Exercises {
 	 HINT: To convert an integer x to a string you can call x.toString() in your code (e.g. if x = 1 then x.ToString()
 	 equals "1")
 	 */
-	public List<String> fizzBuzzList(Integer[] integerArray) {
-		return null;
+	public List<String> fizzBuzzList(Integer[] integerArray)
+	{
+		List<String> fizzyListy = new ArrayList<String>();
+		
+		for (int i: integerArray) 
+		{
+			if (i % 3 == 0) 
+			{
+				i = 3;
+				fizzyListy.add(i.toString());
+			}
+			if (i % 5 == 0) 
+			{
+				i = 5;
+				fizzyListy.add(i.toString());
+			}
+			else
+			{
+				fizzyListy.add(i.toString());
+			}
+			
+		}
+		Collections.replaceAll(fizzyListy, "3", "Fizz");
+		Collections.replaceAll(fizzyListy, "5", "Buzz");
+		
+		
+		return fizzyListy;
 	}
 
 	/*
