@@ -10,6 +10,13 @@ public class Exercises {
 	 firstLast6([13, 6, 1, 2, 3]) → false
 	 */
 	public boolean firstLast6(int[] nums) {
+		
+		boolean is6First = nums[0] == 6;
+		boolean is6Last = nums[nums.length-1] == 6;
+		
+		if (is6First || is6Last) {
+			return true;
+		}
 		return false;
 	}
 
@@ -21,6 +28,14 @@ public class Exercises {
 	 sameFirstLast([1, 2, 1]) → true
 	 */
 	public boolean sameFirstLast(int[] nums) {
+		
+		boolean isArray1OrMore = nums.length >= 1;
+		boolean firstAndLastEqual = nums[0] == nums[nums.length -1];
+		
+		if (isArray1OrMore && firstAndLastEqual) {
+			return true;
+		}
+		
 		return false;
 	}
 
@@ -29,7 +44,10 @@ public class Exercises {
 	 makePi() → [3, 1, 4]
 	 */
 	public int[] makePi() {
-		return new int[] {};
+		
+		int[] piArray = new int[] {3, 1, 4};
+		
+		return piArray;
 	}
 
 	/*
@@ -40,6 +58,13 @@ public class Exercises {
 	 commonEnd([1, 2, 3], [1, 3]) → true
 	 */
 	public boolean commonEnd(int[] a, int[] b) {
+		
+		boolean checkFirst = a[0] == b[0];
+		boolean checkLast = a[a.length -1] == b[b.length -1];
+		
+		if (checkFirst || checkLast) {
+			return true;
+		}
 		return false;
 	}
 
@@ -50,7 +75,13 @@ public class Exercises {
 	 sum3([7, 0, 0]) → 7
 	 */
 	public int sum3(int[] nums) {
-		return 0;
+		
+		int sumOfArray = 0;
+		
+		for (int i = 0; i < nums.length; i++) {
+			sumOfArray = sumOfArray + nums[i];
+		}
+		return sumOfArray;
 	}
 
 	/*
@@ -61,7 +92,10 @@ public class Exercises {
 	 rotateLeft3([7, 0, 0]) → [0, 0, 7]
 	 */
 	public int[] rotateLeft3(int[] nums) {
-		return new int[] {};
+		
+		int[] rotatedLeft = new int[] {nums[1], nums[2], nums[0]};
+		
+		return rotatedLeft;
 	}
 
 	/*
@@ -72,7 +106,10 @@ public class Exercises {
 	 reverse3([7, 0, 0]) → [0, 0, 7]
 	 */
 	public int[] reverse3(int[] nums) {
-		return new int[] {};
+		
+		int[] reverseArray = new int[] {nums[2], nums[1], nums[0]};
+		
+		return reverseArray;
 	}
 
 	/*
@@ -83,7 +120,18 @@ public class Exercises {
 	 maxEnd3([2, 11, 3]) → [3, 3, 3]
 	 */
 	public int[] maxEnd3(int[] nums) {
-		return new int[] {};
+		boolean firstIsLarger = nums[0] >= nums[2];
+		boolean lastIsLarger = nums[2] >= nums[0];
+		
+		if (firstIsLarger) {
+			nums[1] = nums[0];
+			nums[2] = nums[0];
+		}
+		else if (lastIsLarger) {
+			nums[0] = nums[2];
+			nums[1] = nums[2];
+		}
+		return nums;
 	}
 
 	/*
@@ -94,6 +142,16 @@ public class Exercises {
 	 sum2([1, 1, 1, 1]) → 2
 	 */
 	public int sum2(int[] nums) {
+		
+		boolean is2orMore = nums.length >= 2;
+		boolean is1 = nums.length == 1;
+		
+		if (is2orMore) {
+			return nums[0] + nums[1];
+		}
+		else if (is1) {
+			return nums[0];
+		}
 		return 0;
 	}
 
@@ -105,7 +163,10 @@ public class Exercises {
 	 middleWay([5, 2, 9], [1, 4, 5]) → [2, 4]
 	 */
 	public int[] middleWay(int[] a, int[] b) {
-		return new int[] {};
+		
+		int[] middleNumbers = new int[] {a[1], b[1]};
+		
+		return middleNumbers;
 	}
 
 	/*
@@ -116,7 +177,15 @@ public class Exercises {
 	 countEvens([1, 3, 5]) → 0
 	 */
 	public int countEvens(int[] nums) {
-		return 0;
+		
+		int evenInts = 0;
+		
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] % 2 == 0) {
+				evenInts = evenInts + 1;
+			}
+		}
+		return evenInts;
 	}
 
 	/*
@@ -130,7 +199,20 @@ public class Exercises {
 	 sum13([1, 2, 2, 1, 13, 3, 4]) → 10
 	 */
 	public int sum13(int[] nums) {
-		return 0;
+		
+		boolean isEmpty = nums.length == 0;
+		int sumOfArray2 = 0;
+		
+	
+		for (int i = 0; i < nums.length; i++) {
+			if (!isEmpty && nums[i] == 13) { 
+				i = i + 1;
+				}
+			else if (!isEmpty && nums[i] != 13) {
+				sumOfArray2 = sumOfArray2 + nums[i];
+			}
+		}
+			return sumOfArray2;
 	}
 
 	/*
@@ -140,6 +222,13 @@ public class Exercises {
 	 has22([2, 1, 2]) → false
 	 */
 	public boolean has22(int[] nums) {
+		
+		
+		for (int i = 0; i < nums.length -1; i++) {
+			if (nums[i] == 2 && nums[i+1] == 2) {
+				return true;
+			}
+		}
 		return false;
 	}
 	
@@ -150,6 +239,20 @@ public class Exercises {
 	 lucky13([1, 2, 4]) → false
 	 */
 	public boolean lucky13(int[] nums) {
+		
+		int isThreeOrOne = 0;
+		
+		
+		for (int i = 0; i < nums.length; i++) { 
+			if (nums[i] == 1 || nums[i] == 3) { 
+				isThreeOrOne = isThreeOrOne + 1;
+			}
+			
+		}
+		if (isThreeOrOne == 0) {
+			return true;
+		}
+		
 		return false;
 	}
 
@@ -160,7 +263,25 @@ public class Exercises {
 	 sum28([1, 2, 3, 4]) → false
 	 */
 	public boolean sum28(int[] nums) {
+		
+		int allTheTwos = 0;
+		
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] == 2) {
+				allTheTwos = allTheTwos + 2;
+			}
+		}
+		if (allTheTwos == 8) {
+			return true;
+		}
 		return false;
 	}
 
+	
+	
+	
+	
+	
+	
+	
 }
