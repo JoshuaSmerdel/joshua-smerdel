@@ -1,6 +1,9 @@
 package com.techelevator;
 
+import java.awt.desktop.AboutHandler;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Exercises {
@@ -16,7 +19,14 @@ public class Exercises {
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"]
 	 */
 	public List<String> array2List(String[] stringArray) {
-		return null;
+		
+		List<String> arrayToList = new ArrayList<>();
+		
+		for (int i = 0; i < stringArray.length; i++) {
+			arrayToList.add(stringArray[i]);
+		}
+		
+		return arrayToList;
 	}
 
 	/*
@@ -26,7 +36,10 @@ public class Exercises {
 	 list2Array( ["Left", "Right", "Forward", "Back"] )  ->  {"Left", "Right", "Forward", "Back"}
 	 */
 	public String[] list2Array(List<String> stringList) {
-		return null;
+		
+		String[] listArrayStrings = stringList.toArray(new String[0]);
+		
+		return listArrayStrings;
 	}
 
 	/*
@@ -37,7 +50,15 @@ public class Exercises {
 	 no4LetterWords( {"Jack", "Jill", "Jane", "John", "Jim"} )  ->  ["Jim"]
 	 */
 	public List<String> no4LetterWords(String[] stringArray) {
-		return null;
+		
+		List<String> newListArray = new ArrayList<>();
+		
+		for (int i = 0; i < stringArray.length; i++) {
+			if (stringArray[i].length() >= 5 || stringArray[i].length() <=3) {
+				newListArray.add(stringArray[i]);
+			}
+		}
+		return newListArray;
 	}
 
 	/*
@@ -47,7 +68,15 @@ public class Exercises {
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
-		return null;
+		
+		List<Double> halfDouble = new ArrayList<>();
+		
+		for (int i = 0; i < intArray.length; i++) {
+			double temp = (double)intArray[i] / 2;
+			halfDouble.add(temp);
+			
+		}
+		return halfDouble;
 	}
 
 	/*
@@ -57,7 +86,16 @@ public class Exercises {
 	 findLargest( [34070, 1380, 81238, 7782, 234, 64362, 627] ) -> 64362
 	 */
 	public Integer findLargest(List<Integer> integerList) {
-		return null;
+		
+		int largestOne = 0;
+		
+		for (int i = 0; i < integerList.size(); i++) {
+			int temp1 = integerList.get(i);
+			if (temp1 > largestOne) {
+				largestOne = temp1;
+			}
+	}
+		return largestOne;
 	}
 
 	/*
@@ -67,7 +105,16 @@ public class Exercises {
 	 oddOnly( {734, 233, 782, 811, 3, 9999} ) -> [233, 811, 3, 9999]
 	 */
 	public List<Integer> oddOnly(Integer[] integerArray) {
-		return null;
+		
+		List<Integer> oddInts = new ArrayList<>();
+		
+		for (int i = 0; i < integerArray.length; i++) {
+			if (integerArray[i] % 2 != 0) {
+				int temp = integerArray[i];
+				oddInts.add(temp);
+			}
+		}
+		return oddInts;
 	}
 
 	/*
@@ -78,7 +125,16 @@ public class Exercises {
 	 foundIntTwice( [9, 23, 44, 2, 88, 44], 44) -> true
 	 */
 	public boolean foundIntTwice(List<Integer> integerList, int intToFind) {
-		return false;
+		
+		int counter = 0;
+		
+		for (int i = 0; i < integerList.size(); i++) {
+			if (integerList.get(i) == intToFind) {
+				counter++;
+			}
+		}
+		boolean twoOrMore = counter >= 2;
+		return twoOrMore;
 	}
 
 	/*
@@ -95,9 +151,26 @@ public class Exercises {
 	 equals "1")
 	 */
 	public List<String> fizzBuzzList(Integer[] integerArray) {
-		return null;
-	}
+		
+		List<String> fizzBuzz = new ArrayList<>();
 
+		for (int i = 0; i < integerArray.length; i++) {
+			if (integerArray[i] % 3 != 0 && integerArray[i] % 5 != 0) {
+				fizzBuzz.add(integerArray[i].toString());
+			}
+			else if (integerArray[i] % 3 == 0 && integerArray[i] % 5 != 0) {
+				fizzBuzz.add("Fizz");
+			}
+			else if (integerArray[i] % 5 == 0 && integerArray[i] % 3 != 0) {
+				fizzBuzz.add("Buzz");
+			}
+			else if (integerArray[i] % 5 == 0 && integerArray[i] % 3 == 0) {
+				fizzBuzz.add("FizzBuzz");
+			}
+
+		}
+		return fizzBuzz;
+	}
 	/*
 	 Given two lists of Integers, interleave them beginning with the first element in the first list followed
 	 by the first element of the second. Continue interleaving the elements until all elements have been interwoven.
@@ -106,7 +179,39 @@ public class Exercises {
 	 interleaveLists( [1, 2, 3], [4, 5, 6] )  ->  [1, 4, 2, 5, 3, 6]
 	 */
 	public List<Integer> interleaveLists(List<Integer> listOne, List<Integer> listTwo) {
-		return null;
-	}
+		
+		int i = 1;
+		int j = 0;
+	
+		
+		while(j < listTwo.size())
+		{
+			if(i < listOne.size())
+			{
+				listOne.add(i, listTwo.get(j));
+				i += 2;
+			}
+			else
+			{
+				listOne.add(listTwo.get(j));
+				i++;
+			}
 
+			j++;
+		}
+		return listOne;
+	}
+	
 }
+		
+//		List<Integer> wovenList = new ArrayList<>();
+//		
+//		for (int i = 0; i < listOne.size(); i = i + 1) {
+//			wovenList.add(i, listOne.get(i));
+//			wovenList.add(i+1, listTwo.get(i));
+//		}
+//		
+//		return wovenList;
+//	}
+//
+//}
