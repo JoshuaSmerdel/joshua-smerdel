@@ -1,5 +1,6 @@
 package com.techelevator;
 
+import java.security.acl.Group;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,8 +35,52 @@ public class Exercises {
 	 *
 	 */
 	public String animalGroupName(String animalName) {
-		return null;
+		
+		Map<String, String> animalMap = new HashMap<String, String>();
+
+		animalMap.put("rhino", "Crash");
+		animalMap.put("giraffe", "Tower");
+		animalMap.put("elephant", "Herd");
+		animalMap.put("lion", "Pride");
+		animalMap.put("crow", "Murder");
+		animalMap.put("pigeon", "Kit");
+		animalMap.put("flamingo", "Pat");
+		animalMap.put("deer", "Herd");
+		animalMap.put("dog", "Pack");
+		animalMap.put("cocodile", "Float");
+
+		if (animalName == null) {
+			return "unknown";
+		}
+		if (animalMap.containsKey(animalName.toLowerCase())) {
+			return animalMap.get(animalName.toLowerCase());
+		}
+
+		return "unknown";
 	}
+		
+//		Map<String, String> animalMap = new HashMap<>();
+//		animalMap.put("rhino", "Crash");
+//		animalMap.put("giraffe", "Tower");
+//		animalMap.put("elephant", "Herd");
+//		animalMap.put("lion", "Pride");
+//		animalMap.put("crow", "Murder");
+//		animalMap.put("pigeon", "Kit");
+//		animalMap.put("flamingo", "Pat");
+//		animalMap.put("deer", "Herd");
+//		animalMap.put("dog", "Pack");
+//		animalMap.put("crocidile", "Float");
+//		//search the animalMap for animalName 
+//		String groupName = animalMap.get(animalName.toLowerCase());
+//		
+//		boolean containsAnimalName = animalMap.containsKey(animalName.toLowerCase());
+//		boolean isNull = groupName == null;
+//		
+//		if (isNull) { 
+//			return "unknown";
+//		}
+//		return groupName;
+//	}
 
 	/*
 	 * Given an String item number (a.k.a. SKU), return the discount percentage if the item is on sale.
@@ -60,7 +105,23 @@ public class Exercises {
 	 *
 	 */
 	public double isItOnSale(String itemNumber) {
-		return -1.0;
+		
+		Map<String, Double> skuCodes = new HashMap<>();
+		
+		skuCodes.put("kitchen4001", 0.20);
+		skuCodes.put("garage1070", 0.15);
+		skuCodes.put("livingroom", 0.10);
+		skuCodes.put("kitchen6073", 0.40);
+		skuCodes.put("bedroom3434", 0.60);
+		skuCodes.put("bath0073", 0.15);
+		
+		if (itemNumber == null) {
+			return (double)0.00;
+		}
+		if (skuCodes.containsKey(itemNumber.toLowerCase())) {
+			return skuCodes.get(itemNumber.toLowerCase());
+		}
+		return 0.00;
 	}
 
 	/*
@@ -74,7 +135,27 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> robPeterToPayPaul(Map<String, Integer> peterPaul) {
-		return null;
+		
+		boolean peterMoreThanZero = peterPaul.get("Peter") > 0;
+		boolean paulLesThanTen = peterPaul.get("Paul") < 1000;
+		double petersWallet = peterPaul.get("Peter");
+		double paulsWallet = peterPaul.get("Paul");
+		double petersHalf = petersWallet / 2;
+		double paulsShare = paulsWallet + petersHalf;
+		
+		if (peterMoreThanZero && paulLesThanTen && petersWallet % 2 != 0) {
+			peterPaul.put("Peter", (int)petersHalf + 1);
+			peterPaul.put("Paul", (int)paulsShare);
+			
+			return peterPaul;
+		}
+		else if (peterMoreThanZero && paulLesThanTen) {
+			peterPaul.put("Peter", (int)petersHalf);
+			peterPaul.put("Paul", (int)paulsShare);
+			
+			return peterPaul;
+		}
+		return peterPaul;
 	}
 
 	/*
@@ -87,7 +168,22 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> peterPaulPartnership(Map<String, Integer> peterPaul) {
-		return null;
+		
+		int petersWallet = peterPaul.get("Peter");
+		int paulsWallet = peterPaul.get("Paul");
+		int petersQuarter = petersWallet / 4;
+		int paulsQuarter = paulsWallet / 4;
+		boolean peterMoreThanFifty = petersWallet >= 5000;
+		boolean paulmoreThanHundred = paulsWallet >= 10000;
+		
+		if (peterMoreThanFifty && paulmoreThanHundred) {
+			peterPaul.put("Peter", petersWallet - petersQuarter);
+			peterPaul.put("Paul", paulsWallet - paulsQuarter);
+			peterPaul.put("PeterPaulPartnership", petersQuarter + paulsQuarter);
+			return peterPaul;
+		}
+		
+		return peterPaul;
 	}
 
 	/*
@@ -99,7 +195,16 @@ public class Exercises {
 	 * beginningAndEnding(["muddy", "good", "moat", "good", "night"]) → {"g": "d", "m": "t", "n": "t"}
 	 */
 	public Map<String, String> beginningAndEnding(String[] words) {
-		return null;
+		
+		Map<String, String> firstAndLastMap = new HashMap<>();
+		
+		for (int i = 0; i < words.length; i++) {
+			String char1 = String.valueOf(words[i].charAt(0));
+			String char2 = String.valueOf(words[i].charAt(words[i].length() -1));
+			firstAndLastMap.put(char1, char2);
+		}
+		
+		return firstAndLastMap;
 	}
 
 	/*
