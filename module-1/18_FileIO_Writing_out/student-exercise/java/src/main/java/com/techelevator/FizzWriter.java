@@ -8,16 +8,6 @@ public class FizzWriter {
 
 	public static void main(String[] args) throws FileNotFoundException {
 
-//		-----INSTRUCTIONS------
-//		Create a program to write out the result of FizzBuzz (1 to 300)
-//		to a file called FizzBuzz.txt. The file should be written out to
-//		the same directory as this README file.
-//
-//		If the number is divisible by 3 or contains a 3, print “Fizz.”
-//		If the number is divisible by 5 or contains a 5, print “Buzz.”
-//		If the number is divisible by 3 and 5, print “FizzBuzz.”
-//		Otherwise, print the number.
-
 //		file creation and write functions
 		File fizzBuzzTxt = new File("FizzBuzz.txt");
 		PrintWriter fizzBuzzWrite = new PrintWriter(fizzBuzzTxt.getAbsolutePath());
@@ -35,11 +25,11 @@ public class FizzWriter {
 
 //			if/else's to qualify FizzBuzz parameters and output result to FizzBuzz.txt
 			if (fizzBuzz){
-				fizzBuzzWrite.println("FizzBuzz" + "(" + counter + ")");
+				fizzBuzzWrite.println("FizzBuzz" + " (" + counter + ")");
 			} else if (fizz || containsThree){
-				fizzBuzzWrite.println("Fizz" + "(" + counter + ")");
+				fizzBuzzWrite.println("Fizz" + " (" + counter + ")");
 			} else if (buzz || containsFive){
-				fizzBuzzWrite.println("Buzz" + "(" + counter + ")");
+				fizzBuzzWrite.println("Buzz" + " (" + counter + ")");
 			} else{
 				fizzBuzzWrite.println(counter);
 			}
