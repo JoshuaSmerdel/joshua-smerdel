@@ -2,7 +2,6 @@ package com.techelevator.auction;
 
 import java.util.Scanner;
 
-import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 public class App {
@@ -20,22 +19,34 @@ public class App {
 
     public Auction[] listAllAuctions() {
         // api code here
-        return null;
+        String url = API_URL;
+
+        Auction[] auctions = restTemplate.getForObject(url, Auction[].class);
+        return auctions;
     }
 
     public Auction listDetailsForAuction(int id) {
         // api code here
-        return null;
+        String url = API_URL+ "/" +  id;
+
+        Auction auctionDetails = restTemplate.getForObject(url, Auction.class);
+        return auctionDetails;
     }
 
     public Auction[] findAuctionsSearchTitle(String title) {
         // api code here
-        return null;
+        String url = API_URL + "?title_like=" + title;
+
+        Auction[] auctionSearch = restTemplate.getForObject(url, Auction[].class);
+        return auctionSearch;
     }
 
     public Auction[] findAuctionsSearchPrice(double price) {
         // api code here
-        return null;
+        String url = API_URL + "?currentBid_lte=" + price;
+
+        Auction[] auctionPrice = restTemplate.getForObject(url, Auction[].class);
+        return auctionPrice;
     }
 
     private void run() {
