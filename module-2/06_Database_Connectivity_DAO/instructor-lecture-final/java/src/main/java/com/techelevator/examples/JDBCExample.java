@@ -11,7 +11,7 @@ import org.apache.commons.dbcp2.BasicDataSource;
 public class JDBCExample {
 
 	public static void main(String[] args) throws SQLException {
-		
+
 		/* This datasource will be used for creating connections to the database.
 		 * Below, we provide the information required to make database connections */
 		
@@ -29,16 +29,18 @@ public class JDBCExample {
 		// 3. Create a Statement object so that we can execute a SQL Query 
 		Statement stmt = conn.createStatement();
 		
-		// 4. write your query -  Execute a SQL query and return the results 
-		String sqlActionFilmsReleaseIn2006 = "SELECT film.title "
-											 + "		, film.release_year "
-											 + " FROM film "
-											 + " JOIN film_category "
-											 + "    ON film.film_id = film_category.film_id "
-											 + " JOIN category "
-											 + "    ON category.category_id = film_category.category_id " 
-											 + " WHERE film.release_year = 2006 " 
-											 + " AND category.name = 'Action';";
+//		4. write your query -  Execute a SQL query and return the results
+//		write query using dbVisualizer or DataGrip etc, then paste
+
+		String sqlActionFilmsReleaseIn2006 =
+						"SELECT film.title, film.release_year\n" +
+						"FROM film\n" +
+						"         JOIN film_category\n" +
+						"              ON film.film_id = film_category.film_id\n" +
+						"         JOIN category\n" +
+						"              ON category.category_id = film_category.category_id\n" +
+						"WHERE film.release_year = 2006\n" +
+						"  AND category.name = 'Action';";
 		
 
 		
@@ -62,38 +64,38 @@ public class JDBCExample {
 								  "JOIN actor on actor.actor_id = film_actor.actor_id " +
 								  "WHERE actor.first_name = '" + firstName.toUpperCase() + "' " +
 								  "AND actor.last_name = '" + lastName.toUpperCase() + "'";
-		
+
 		results = stmt.executeQuery(sqlMoviesByActor);
-		
+
 		System.out.println("\n\nFilms Starring "+firstName+" "+lastName+": ");
 		while(results.next()) {
 			String title = results.getString("title");
 			System.out.println(title);
 		}
-		
+
 		/* The solution to the problem of building dynamic SQL statements is to use a PreparedStatement */
-		
+
 		/* a parameterized SQL statement uses the '?' character as a placeholder for dynamic parameters */
 		String sqlMoviesByActorParameterized = "SELECT film.title "+
 				  "FROM film join film_actor on film.film_id = film_actor.film_id "+
 				  "JOIN actor on actor.actor_id = film_actor.actor_id "+
 				  "WHERE actor.first_name = ? "+
 				  "AND actor.last_name = ?";
-		
+
 		/* PreparedStatement objects are created using the Connection object */
 		PreparedStatement movieByActorStmt = conn.prepareStatement(sqlMoviesByActorParameterized);
 		movieByActorStmt.setString(1, "NICK");
 		movieByActorStmt.setString(2, "STALLONE");
-		
+
 		/* Call executeQuery to return the results as a ResultSet */
 		results = movieByActorStmt.executeQuery();
-		
+
 		System.out.println("\n\nFilms Starring "+firstName+" "+lastName+": ");
 		while(results.next()) {
 			String title = results.getString("title");
 			System.out.println(title);
 		}
-		
+
 		/* The statment objects can also be used to perform INSERT and UPDATE commands */
 		PreparedStatement insertActorStmt = conn.prepareStatement("INSERT INTO actor(first_name, last_name) "+
 																  "VALUES(?, ?)");
@@ -101,10 +103,10 @@ public class JDBCExample {
 		String actorLastName = "O'MALLEY";
 		insertActorStmt.setString(1, actorFirstName);
 		insertActorStmt.setString(2, actorLastName);
-	
+
 		/* The execute method is used for INSERT and UPDATE statements */
 		insertActorStmt.executeUpdate();
-		
+
 		PreparedStatement findActorByNameStmt = conn.prepareStatement("SELECT * FROM actor WHERE first_name = ? AND last_name = ?");
 		findActorByNameStmt.setString(1, actorFirstName);
 		findActorByNameStmt.setString(2, actorLastName);
@@ -116,18 +118,18 @@ public class JDBCExample {
 			String lname = results.getString("last_name");
 			System.out.println("("+id+") "+fname+" "+lname);
 		}
-		
+
 		/* To use transactions in JDBC, we can turn off the default "autocommit" behavior of the Connection object */
 		conn.setAutoCommit(false);
-		
+
 		PreparedStatement deleteMarcOMalleyStmt = conn.prepareStatement("DELETE FROM ACTOR WHERE first_name = 'MARC' AND last_name = 'O''MALLEY'");
 		deleteMarcOMalleyStmt.executeUpdate();
-		
+
 		conn.commit();
-		
+
 		/* Marc O'Malley rises again! */
 		insertActorStmt.executeUpdate();
-		
+
 		conn.commit();
 	}
 }
