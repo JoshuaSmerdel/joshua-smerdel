@@ -1,0 +1,24 @@
+Tomcat Apache Info
+
+https://medium.com/@fahimhossain_16989/installing-apache-tomcat-on-macos-mojave-using-homebrew-28ce039b4b2e
+
+
+Start Tomcat automatically at Mac Login:
+
+brew services start tomcat
+
+In order to stop Tomcat to start automatically at Mac Login:
+
+brew services stop tomcat
+
+2. Start Tomcat manually:
+
+catalina start
+
+In order to stop Tomcat manually:
+
+catalina stop
+
+To view available options on Tomcat run:
+
+catalina -h
