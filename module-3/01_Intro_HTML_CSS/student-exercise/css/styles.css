@@ -1,9 +1,4 @@
-html {
-    font-size: 10px;
-}
-
 h1 {
-    font-family: Helvetica, Arial, SansSerif;
     color: antiquewhite;
     background-color: orangered;
     padding: 1rem;
@@ -15,10 +10,8 @@ h1 {
 }
 
 h2 {
-    font-family: Helvetica, Arial, SansSerif;
     color: antiquewhite;
     background-color: orangered;
-    padding: 0;
     margin: 0;
     text-align: center;
     padding: 1rem;
@@ -44,9 +37,9 @@ ul {
     background-color: #333;
 }
 
-li {
-    float: left;
-}
+/*li {*/
+/*    float: left;*/
+/*}*/
 
 li a {
     display: block;
@@ -65,50 +58,64 @@ section {
     align-content: space-evenly;
 }
 
-#menu {
-    /*display: inline-block;*/
-    /*padding: 8px;*/
-    /*background-color: #dddddd;*/
-}
+/*#menu {*/
+/*    display: inline-block;*/
+/*    padding: 8px;*/
+/*    background-color: #dddddd;*/
+/*}*/
 
-main {
-    padding-top: 5rem;
-}
+/*main {*/
+/*    padding-top: 5rem;*/
+/*}*/
 
-body {
-    font-family: Helvetica, Arial, SansSerif;
-    background-color: antiquewhite;
-    font-size: 1.5rem;
-}
+/*body {*/
+/*    font-family: Helvetica, Arial, SansSerif;*/
+/*    background-color: antiquewhite;*/
+/*    font-size: 1.5rem;*/
+/*}*/
 
-#design10 {
-    background-color: antiquewhite;
-    padding: 5rem 5rem 5rem 5rem;
-}
+/*#design10 {*/
+/*    background-color: antiquewhite;*/
+/*    padding: 5rem 5rem 5rem 5rem;*/
+/*    font-size: 3rem;*/
+/*}*/
 
-#about {
-    text-align: center;
-    font-weight: bold;
-    font-size: 2.5rem;
-    font
-    background-color: antiquewhite;
-    padding: 5rem 5rem 5rem 5rem;
-}
+/*#about {*/
+/*    text-align: center;*/
+/*    font-weight: bold;*/
+/*    font-size: 2.5rem;*/
+/*    background-color: antiquewhite;*/
+/*    padding: 5rem 5rem 5rem 5rem;*/
+/*}*/
 
-#form {
-    alignment: center;
-    font-weight: bold;
-    font-family: Helvetica, Arial, SansSerif;
+/*#form {*/
+/*    alignment: center;*/
+/*    font-weight: bold;*/
 
-}
+/*}*/
 
-table, th, td {
-    background-color: white;
-    alignment: center;
-    font-weight: bold;
-    font-family: Helvetica, Arial, SansSerif;
-    border: .25rem solid black;
-    border-collapse: collapse;
-    padding: 2rem;
-    margin: 5rem;
-}
+/*table #table1 {*/
+/*    width:70%;*/
+/*    margin-left:15%;*/
+/*    margin-right:15%;*/
+/*}*/
+/*th {*/
+/*    text-align: left;*/
+/*}*/
+
+/*tr {*/
+/*    text-align: left;*/
+/*}*/
+
+/*table {*/
+/*    background-color: white;*/
+/*    font-weight: bold;*/
+/*    font-family: Helvetica, Arial, SansSerif;*/
+/*    border: .25rem solid black;*/
+/*    border-collapse: collapse;*/
+/*    padding: 2rem;*/
+/*    margin: 5rem*/
+/*}*/
+
+
+
