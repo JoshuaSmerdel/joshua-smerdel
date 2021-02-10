@@ -1,0 +1,21 @@
+body {
+    font-family: Helvetica, Arial, SansSerif;
+    background-color: aqua;
+}
+
+div, h1, h2, table {
+    background-color: lemonchiffon;
+    padding: 20px;
+    border: 20px solid blueviolet;
+    padding: 20px;
+    margin: 20px;
+    height: 70px;
+    color: green;
+}
+
+span, button {
+    font-weight: bold;
+    color: red;
+    background-color: burlywood;
+    height: 50px;
+}

@@ -1,0 +1,121 @@
+h1 {
+    color: antiquewhite;
+    background-color: orangered;
+    padding: 1rem;
+    margin: 0;
+    text-align: center;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    font-size: 5rem;
+}
+
+h2 {
+    color: antiquewhite;
+    background-color: orangered;
+    margin: 0;
+    text-align: center;
+    padding: 1rem;
+    font-size: 2.5rem;
+    font-kerning: auto;
+
+}
+
+h3 {
+    margin: 0;
+    padding-bottom: 25rem;
+    background-image: url("../img/Dieter-Rams-Glasses.jpg");
+    background-position-x: center;
+    border-top: solid white 5px;
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+/*li {*/
+/*    float: left;*/
+/*}*/
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
+section {
+    align-content: space-evenly;
+}
+
+/*#menu {*/
+/*    display: inline-block;*/
+/*    padding: 8px;*/
+/*    background-color: #dddddd;*/
+/*}*/
+
+/*main {*/
+/*    padding-top: 5rem;*/
+/*}*/
+
+/*body {*/
+/*    font-family: Helvetica, Arial, SansSerif;*/
+/*    background-color: antiquewhite;*/
+/*    font-size: 1.5rem;*/
+/*}*/
+
+/*#design10 {*/
+/*    background-color: antiquewhite;*/
+/*    padding: 5rem 5rem 5rem 5rem;*/
+/*    font-size: 3rem;*/
+/*}*/
+
+/*#about {*/
+/*    text-align: center;*/
+/*    font-weight: bold;*/
+/*    font-size: 2.5rem;*/
+/*    background-color: antiquewhite;*/
+/*    padding: 5rem 5rem 5rem 5rem;*/
+/*}*/
+
+/*#form {*/
+/*    alignment: center;*/
+/*    font-weight: bold;*/
+
+/*}*/
+
+/*table #table1 {*/
+/*    width:70%;*/
+/*    margin-left:15%;*/
+/*    margin-right:15%;*/
+/*}*/
+/*th {*/
+/*    text-align: left;*/
+/*}*/
+
+/*tr {*/
+/*    text-align: left;*/
+/*}*/
+
+/*table {*/
+/*    background-color: white;*/
+/*    font-weight: bold;*/
+/*    font-family: Helvetica, Arial, SansSerif;*/
+/*    border: .25rem solid black;*/
+/*    border-collapse: collapse;*/
+/*    padding: 2rem;*/
+/*    margin: 5rem*/
+/*}*/
+
+
+

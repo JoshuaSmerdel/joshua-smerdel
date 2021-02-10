@@ -1,0 +1,31 @@
+m02d01
+
+testing triangle
+----------------
+	1. End to end test
+
+		•
+		•
+		•
+
+	2. integration testing
+
+		• Slower than unit testing
+		• 
+		•
+
+	3. unit test
+
+		• PATTERN
+			1. Arrange = setting up script to make db work
+			2. Act = fuction to run to insert or selects from the DB
+			3. Assert = did the data actually come from/go to the DB.  
+		• test one part at a time. see if its working.  
+		• test edge cases
+		• protect against regression
+		• 90-95% Coverage
+		• Should be extremely fast. 
+
+
+
+
