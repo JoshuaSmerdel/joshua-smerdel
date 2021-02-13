@@ -1,0 +1,31 @@
+2/2/2021 Review
+
+JWT uses JSON
+
+Principal = not tied to JWT directly
+	
+	username
+	roles
+	user
+	admin
+	purchaser
+
+SOAP = 
+
+	soap header
+		who the user 
+		roles
+		deserialized from XML to pricipal 
+
+
+vending machine -> API -> DB
+
+VMC
+
+Client only stores 
+
+SALT = 	
+
+	HAsh something adds random text to the end. 
+	password + salt = 
+
