@@ -19,5 +19,5 @@ body {
 }
 
 .bio:nth-child(2) img {
-  order: 4;
+  order: 1;
 }
