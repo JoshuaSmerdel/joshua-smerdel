@@ -12,7 +12,13 @@ function variables() {
   // Declares a variable where the value cannot be changed
   // Declares a variable those value can be changed
   // Declares a variable that will always be an array
-}
+  var name = "Joshua"; //old way, dont use.
+  let age = 40; //variage that can be changed
+  const lastName = "Smerdel"; //cant change variable
+  const daysOfTheWeek = 7;
+  console.log('There are' + daysOfTheWeek + ' days in the week.')
+  const message = `There are ${daysOfTheWeek} days in the week`;
+  console.log(message);
 
 /**
  * Functions can also accept parameters.
@@ -138,4 +144,5 @@ function stringFunctions(value) {
         - trim()
         - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
     */
+}
 }
