@@ -62,16 +62,18 @@ function takeOptionalParameter(zero) {
 function filterArrayToOnlySingleDigitNumbers(arrayToFilter) {
 
     // third way of doing
-    // function lessThanDouble(value) {
-    //     return value < 10 && value > -10;
-    // }
-    //
-    // return arrayToFilter.filter(lessThanDouble);
+    function lessThanDouble(value) {
+        return value < 10 && value > -10;
+    }
+
+    return arrayToFilter.filter(lessThanDouble);
+
+
+    // 4th way of doing
+    // return arrayToFilter.filter(newArrayFromFilter => newArrayFromFilter < 10 && newArrayFromFilter > -10);
 
     // Code from Stephen
     // return arrayToFilter.filter(n => n < 10 && n > -10);
-
-    return arrayToFilter.filter(newArrayFromFilter => newArrayFromFilter < 10 && newArrayFromFilter > -10);
 
     // My Original Code
     // return arrayToFilter.filter(function (val) {
@@ -159,7 +161,7 @@ function convertTemperature(temperature, temperatureUnit, includeUnit = false) {
     let convertedTemp = 0;
     let convertedUnit = 'F';
     if (temperatureUnit === 'C' || temperatureUnit === 'c') {
-        convertedTemp = (temperature * 9) / 5 + 32;
+        convertedTemp = (temperature * 9) / 5 + 3 2;
         convertedUnit = 'F';
     } else {
         convertedTemp = ((temperature - 32) * 5) / 9;
