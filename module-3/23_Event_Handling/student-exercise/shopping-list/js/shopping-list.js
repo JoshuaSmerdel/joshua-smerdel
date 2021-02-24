@@ -37,5 +37,66 @@ function displayGroceries() {
   });
 }
 
-setPageTitle();
-displayGroceries();
+document.addEventListener('DOMContentLoaded', () => {
+  setPageTitle();
+  displayGroceries();
+
+  // When a user clicks on list item to mark it complete or not complete
+  
+  let boughtItems = [];
+  const buySingleItem = document.querySelector('ul');
+  boughtItems = buySingleItem.children;
+
+  let childrenNodes = [];
+
+  for(let i = 0; i < boughtItems.length; i++) {
+
+    boughtItems[i].addEventListener('click', (event) => {
+      if(boughtItems[i].getAttribute('completed') != 'true') {
+        boughtItems[i].setAttribute('class', 'completed');
+        childrenNodes = boughtItems[i].children;
+        childrenNodes[0].setAttribute('class', 'far fa-check-circle completed');
+      }
+    });
+    
+    boughtItems[i].addEventListener('dblclick', (event) => {
+      if(boughtItems[i].getAttribute('completed') != 'false') {
+        boughtItems[i].classList.remove('completed');
+        childrenNodes = boughtItems[i].children;
+        childrenNodes[0].classList.remove('completed');
+      }
+    });
+
+  }
+
+  const toggleButton = document.getElementById('toggleAll');
+
+  toggleButton.addEventListener('click', (event) => {
+    if(allItemsIncomplete) {
+      for(let i = 0; i < boughtItems.length; i++) {
+        boughtItems[i].setAttribute('class', 'completed');
+        childrenNodes = boughtItems[i].children;
+        childrenNodes[0].setAttribute('class', 'far fa-check-circle completed');
+        allItemsIncomplete = false;
+        toggleButton.innerText = 'Mark All Incomplete';
+      }
+    } else {
+      for(let i = 0; i < boughtItems.length; i++) {
+        boughtItems[i].classList.remove('completed');
+        childrenNodes = boughtItems[i].children;
+        childrenNodes[0].classList.remove('completed');
+        allItemsIncomplete = true;
+        toggleButton.innerText = 'Mark All Complete';
+      }
+    }
+  })
+});
+
+function markSingleItemComplete(element) {
+  if(!Element.classList.contains('.completed')) {
+    element.classList.add('.completed');
+    element.children.classList('.completed');
+  }
+
+}
+
