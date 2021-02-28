@@ -3,36 +3,37 @@
     <h1>Product Reviews for ...{{ title }}</h1>
     <p>{{ description }}</p>
 
-<!--    add the summary wells here-->
+    <!--    add the summary wells here-->
     <div class="well-display">
       <div class="well">
-        <span class="amount">{{averageRating}}</span>
+        <span class="amount">{{ averageRating }}</span>
         Average Rating
       </div>
       <div class="well">
-        <span class="amount"></span>
-        1 Star Review
+        <span class="amount">{{ oneStarReviews }}</span>
+        1 Star Review{{ oneStarReviews === 1 ? '' : 's' }}
       </div>
       <div class="well">
-        <span class="amount">...</span>
-        2 Star Review
+        <span class="amount">{{ twoStarReviews }}</span>
+        2 Star Review{{ twoStarReviews === 1 ? '' : 's' }}
       </div>
       <div class="well">
-        <span class="amount">...</span>
-        3 Star Review
+        <span class="amount">{{ threeStarReviews }}</span>
+        3 Star Review{{ threeStarReviews === 1 ? '' : 's' }}
       </div>
       <div class="well">
-        <span class="amount">...</span>
-        4 Star Review
+        <span class="amount">{{ fourStarReviews }}</span>
+        4 Star Review{{ fourStarReviews === 1 ? '' : 's' }}
       </div>
       <div class="well">
-        <span class="amount">...</span>
-        5 Star Review
+        <span class="amount">{{ fiveStarReviews }}</span>
+        5 Star Review{{ fiveStarReviews === 1 ? '' : 's' }}
       </div>
     </div>
 
     <!--Loop through all reviews-->
     <div class="review"
+         v-bind:class="{favorite: review.isFavorite}"
          v-for="review in reviews"
          v-bind:key="review.id">
       <h4>
@@ -43,6 +44,7 @@
       </div>
       <h3>{{ review.title }}</h3>
       <p>{{ review.review }}</p>
+      <p>Favorite? <input type="checkbox" v-model="review.isFavorite"></p>
     </div>
   </div>
 
@@ -100,6 +102,26 @@ export default {
       }, 0);
 
       return sum / this.reviews.length;
+    },
+    oneStarReviews() {
+      const reviews = this.reviews.filter(review => review.rating === 1);
+      return reviews.length;
+    },
+    twoStarReviews() {
+      const reviews = this.reviews.filter(review => review.rating === 2);
+      return reviews.length;
+    },
+    threeStarReviews() {
+      const reviews = this.reviews.filter(review => review.rating === 3);
+      return reviews.length;
+    },
+    fourStarReviews() {
+      const reviews = this.reviews.filter(review => review.rating === 4);
+      return reviews.length;
+    },
+    fiveStarReviews() {
+      const reviews = this.reviews.filter(review => review.rating === 5);
+      return reviews.length;
     }
   }
 }
